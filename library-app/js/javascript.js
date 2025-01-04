@@ -1,5 +1,7 @@
 const myLibrary = [];
 const container = document.getElementById("main");
+const addBookBtn = document.getElementById("addBook");
+const dialog = document.querySelector("dialog");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -41,6 +43,9 @@ function createCard (book){
 
 }
 
+addBookBtn.addEventListener("click", () => {
+    dialog.showModal()
+})
 
 console.log(myLibrary)
 addBookToLibrary("Test Book", "Kyle", "300", true)

@@ -9,6 +9,10 @@
     
 </head>
 <body class="bg-gray-50">
+    <div class="min-h-2 flex justify-end align-center p-2">
+        <button class="mr-8 bg-blue-400 p-2 border border-slate-300 rounded-xl text-white" id="addBook">Add Book</button>
+    </div>
+    
     <div class="container grid grid-cols-3 gap-4 mx-auto p-6" id="main">
         <div class="p-6 border border-slate-300 bg-white rounded-xl shadow-xl flex flex-col gap-x-4">
             <h3>Book Title</h3>
@@ -24,6 +28,19 @@
         </div>
 
     </div>
+
+    <dialog>
+        <form>
+            <label for="title">Book Title</label>
+            <input type="text" name="title" id="title">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+            <label for="pages">Total Pages</label>
+            <input type="number" name="pages" id="pages">
+            <label for="haveread">Read Book?</label>
+            <input type="checkbox" name="haveread" id="haveread">
+        </form>
+    </dialog>
     <script src="js/javascript.js"></script>
 </body>
 </html>
