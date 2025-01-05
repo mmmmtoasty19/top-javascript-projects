@@ -20,11 +20,12 @@ function addBookToLibrary(title,author,pages,read) {
 }
 
 
-function createCard (book){
+function createCard (book, index){
     const card = document.createElement("div");
     const classList = ["p-6", "border", "border-slate-300", 
         "bg-white", "rounded-xl", "shadow-xl", "flex", "flex-col", "gap-x-4"];
     card.classList.add(...classList);
+    card.dataset.index = index
     
 
     Object.keys(book).forEach((element) => {
@@ -45,22 +46,38 @@ function createCard (book){
 }
 
 addBookBtn.addEventListener("click", () => {
-    dialog.showModal()
+    dialog.showModal();
 })
 
 newBookForm.addEventListener("submit", (e)=> {
-    e.preventDefault()
+    e.preventDefault();
 
-    const inputs = [...newBookForm.elements]
+    const inputs = [...newBookForm.elements];
+    let book = [];
 
     inputs.forEach((item) => {
-        console.log(item.value)
+        book.push(item.value);
+        // console.log(item.value);
+        // console.log(item.type);
     })
+    addBookToLibrary(book)
+
+    clearForm();
+
+    dialog.close();
 
 })
+
+function clearForm() {
+    const inputs = [...newBookForm.elements];
+    inputs.forEach((item) => {
+        if(item.type == 'submit') return;
+        item.value = ""
+    })
+}
 
 addBookToLibrary("Test Book", "Kyle", "300", true)
 addBookToLibrary("How the Grinch Stole Christmas", "Dr. Seuss", "12", false)
 // console.log(myLibrary)
 
-myLibrary.forEach((book) => createCard(book))
+myLibrary.forEach((book, index) => createCard(book, index))
