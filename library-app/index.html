@@ -13,32 +13,27 @@
         <button class="mr-8 bg-blue-400 p-2 border border-slate-300 rounded-xl text-white" id="addBook">Add Book</button>
     </div>
     
-    <div class="container grid grid-cols-3 gap-4 mx-auto p-6" id="main">
-        <div class="p-6 border border-slate-300 bg-white rounded-xl shadow-xl flex flex-col gap-x-4">
-            <h3>Book Title</h3>
-            <p>Book Author</p>
-            <p>Total Pages: 300</p>
-            <p>Have Read</p>
-        </div>
-        <div class="p-6 border border-slate-300 bg-white rounded-xl shadow-xl flex flex-col gap-x-4">
-            <h3>Book Title</h3>
-            <p>Book Author</p>
-            <p>Total Pages: 300</p>
-            <p>Have Read</p>
-        </div>
+    <div class="container grid grid-cols-3 gap-4 mx-auto p-6" id="main"></div>
 
-    </div>
-
-    <dialog>
-        <form>
-            <label for="title">Book Title</label>
-            <input type="text" name="title" id="title">
-            <label for="author">Author</label>
-            <input type="text" name="author" id="author">
-            <label for="pages">Total Pages</label>
-            <input type="number" name="pages" id="pages">
-            <label for="haveread">Read Book?</label>
-            <input type="checkbox" name="haveread" id="haveread">
+    <dialog class="w-3/5 p-2 border border-slate-300 rounded-xl">
+        <form class="flex flex-col min-w-full gap-4">
+            <div class="flex gap-4">
+                <label for="title">Book Title</label>
+                <input type="text" name="title" id="title" class="border border-slate-300">
+            </div>
+            <div class="flex gap-4">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" class="border border-slate-300">
+            </div>
+            <div class="flex gap-4">
+                <label for="pages">Total Pages</label>
+                <input type="number" name="pages" id="pages" class="border border-slate-300">
+            </div>
+            <div class="flex gap-4">
+                <label for="haveread">Read Book?</label>
+                <input type="checkbox" name="haveread" id="haveread">
+            </div>
+            <input type="submit" value="Add Book" id="submitbook" class="mr-8 bg-blue-400 p-2 border border-slate-300 rounded-xl text-white">
         </form>
     </dialog>
     <script src="js/javascript.js"></script>

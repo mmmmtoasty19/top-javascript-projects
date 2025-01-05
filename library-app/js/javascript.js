@@ -1,6 +1,7 @@
 const myLibrary = [];
 const container = document.getElementById("main");
 const addBookBtn = document.getElementById("addBook");
+const newBookForm = document.querySelector("form");
 const dialog = document.querySelector("dialog");
 
 function Book(title, author, pages, read) {
@@ -47,8 +48,19 @@ addBookBtn.addEventListener("click", () => {
     dialog.showModal()
 })
 
-console.log(myLibrary)
+newBookForm.addEventListener("submit", (e)=> {
+    e.preventDefault()
+
+    const inputs = [...newBookForm.elements]
+
+    inputs.forEach((item) => {
+        console.log(item.value)
+    })
+
+})
+
 addBookToLibrary("Test Book", "Kyle", "300", true)
-console.log(myLibrary)
+addBookToLibrary("How the Grinch Stole Christmas", "Dr. Seuss", "12", false)
+// console.log(myLibrary)
 
 myLibrary.forEach((book) => createCard(book))
